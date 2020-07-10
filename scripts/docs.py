@@ -38,8 +38,7 @@ def lang_callback(lang: Optional[str]):
     if not lang.isalpha() or len(lang) != 2:
         typer.echo("Use a 2 letter language code, like: es")
         raise typer.Abort()
-    lang = lang.lower()
-    return lang
+    return lang.lower()
 
 
 def complete_existing_lang(incomplete: str):
@@ -324,8 +323,7 @@ def get_key_section(
 def get_text_with_translate_missing(text: str) -> str:
     lines = text.splitlines()
     lines.insert(1, missing_translation_snippet)
-    new_text = "\n".join(lines)
-    return new_text
+    return "\n".join(lines)
 
 
 def get_file_to_nav_map(nav: list) -> Dict[str, Tuple[str, ...]]:
